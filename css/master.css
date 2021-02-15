@@ -39,16 +39,26 @@ body {
   min-height: 285px;
   overflow: hidden;
 }
-
-.main_nav .nav_top ul li {
+.logocontainer {
+  width: 150px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+.main_nav .nav_top ul a li {
   list-style-type: none;
   padding: 5px 0;
-
-}
-.main_nav .nav_top .menu ul li {
+  vertical-align: middle;
   color: white;
+  text-decoration: none;
 }
-
+.main_nav .nav_top a {
+  text-decoration: none;
+}
+.imageside {
+  width: 30px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
 .leftmain_padd {
   padding: 10px 0;
   display: inline-block;
@@ -63,14 +73,20 @@ body {
 }
 .play_list {
   height: 200px;
-  overflow-y: auto;
+  overflow-y: scroll;
+}
+.play_list::-webkit-scrollbar {
+  width: 12px;
+  background-color: #0d4142;
+}
+.play_list::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 20px;
+  border: 1.5px solid #76a3a2;
 }
 .playlist_menu .play_list ul li {
   padding: 7px 0;
 }
-
-
-
 
 .nav_bottom {
   color: grey;
@@ -82,10 +98,26 @@ body {
 
 .nav_bottom span:first-child {
   color: grey;
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
 }
 .nav_bottom span:last-child {
   color: white;
   font-weight: 900;
+  padding-top: 5px;
+}
+.download {
+  width: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.profile {
+  width: 20px;
+  background-color: grey;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
 }
 /* Fine sezione nav laterale */
 
