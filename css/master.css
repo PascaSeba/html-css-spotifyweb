@@ -15,6 +15,8 @@ body {
   content: "";
   clear: both;
 }
+
+
 /* Sezione contenitori */
 .ms_wrapper {
   width: 100%;
@@ -46,9 +48,15 @@ body {
   overflow: hidden;
 }
 .logocontainer {
-  width: 150px;
+  width: 60%;
   padding-bottom: 10px;
   margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+.logocontainer img:last-child {
+  width: 30%;
+  flex-direction: column;
 }
 .main_nav .nav_top ul a li {
   list-style-type: none;
@@ -63,40 +71,72 @@ body {
 .imageside {
   width: 30px;
   vertical-align: middle;
-  padding-right: 5px;
+  margin-right: 5px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: grey;
+  padding: 5px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.menu a:first-child {
+  color: white;
+}
+.menu a:hover:not(:first-child) {
+  color: white;
 }
 .leftmain_padd {
   padding: 10px 0;
   display: inline-block;
+  font-size: 1.222em;
+  font-weight: 900;
+  color: grey;
 }
-
+.leftmain_padd:hover {
+  color: white;
+}
 .main_nav .nav_top .playlist_menu h3 {
   padding-top: 10px;
   color: white;
+  font-size: 1.7em;
+  font-weight: 900;
 }
 .playlist_menu {
   color: grey;
 }
 .play_list {
-  height: 200px;
+  height: 170px;
   overflow-y: scroll;
 }
 .play_list::-webkit-scrollbar {
   width: 12px;
   background-color: #0d4142;
+  border-radius: 15px;
 }
 .play_list::-webkit-scrollbar-thumb {
   background-color: black;
   border-radius: 20px;
   border: 1.5px solid #76a3a2;
 }
-.play_list::-webkit-scrollbar-thumb:active {
+.play_list::-webkit-scrollbar-thumb:active, .play_list::-webkit-scrollbar-thumb:hover {
   background-color: #141922;
 }
-.playlist_menu .play_list ul li {
-  padding: 7px 0;
+.playlist_menu .play_list ul a li {
+  padding: 5px 0;
+  font-size: 1.1em;
+  color: grey;
 }
-
+.playlist_menu .play_list ul a li:hover {
+  color: white;
+}
 .nav_bottom {
   color: grey;
   display: flex;
@@ -106,18 +146,30 @@ body {
 }
 .nav_bottom span:first-child {
   color: grey;
-  border-bottom: 1px solid grey;
-  padding-bottom: 5px;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 }
+.nav_bottom span:first-child:hover {
+  color: white;
+}
+.border_infnav {
+  border-bottom: 1px solid grey;
+  padding: 3px 0;
+}
+
 .nav_bottom span:last-child {
   color: white;
   font-weight: 900;
-  padding-top: 5px;
+  padding-top: 7px;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 }
+.nav_bottom span:last-child:hover {
+  color: grey;
+}
+
 .download {
   width: 15px;
 
@@ -127,7 +179,6 @@ body {
   background-color: grey;
   height: 20px;
   border-radius: 50%;
-
 }
 .download, .profile {
   margin-right: 5px;
@@ -146,6 +197,7 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 20px;
+  z-index: 999;
 }
 
 .ms_button {
@@ -171,13 +223,12 @@ body {
 
 /* Inizio sezione corpo pagina */
 .main_body {
-  padding-left: 270px;
-  padding-right: 20px;
+  padding-left: 280px;
+  padding-right: 30px;
   padding-top: 80px;
   padding-bottom: 100px;
 }
 .list_body {
-  color: grey;
   font-size: 0.9em;
   font-weight: bold;
   display: flex;
@@ -190,22 +241,30 @@ body {
   display: inline-flex;
   flex-direction: column;
   padding: 5px 10px;
+  color: grey;
 }
-.list_nav ul li:first-child::after {
+.list_nav .list_body a {
+  text-decoration: none;
+}
+.list_nav .list_body a li:hover {
+  color: white;
+}
+.greenbar::after {
   display: flex;
   flex-direction: column;
   align-self: center;
   margin-top: 3px;
 }
-.list_nav ul li:first-child::after {
+.greenbar::after {
   content: "";
   width: 40%;
   height: 3px;
   background-color: #1db954;
 }
-.music_wrapper h1 {
+
+.music_wrapper h1, .create h2, .populars h2 {
   color: white;
-  font-size: 2em;
+  font-size: 3em;
 }
 .music_wrapper {
   width: 100%;
@@ -213,12 +272,70 @@ body {
 .image {
   min-width: 10%;
   padding: 8px 8px;
+  color: white;
 }
 .image img {
   width: 100%;
 }
+.image h3, .create h3, .populars h3 {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+.image p, .create p, .populars p {
+  font-size: 1.2em;
+  color: grey;
+}
 
 
+.create, .populars {
+  width: 100%;
+  color: white;
+  padding-top: 20px;
+}
+.create .image, .populars .image {
+  width: 200px;
+}
+
+
+.populars img {
+  border-radius: 50%;
+}
+.image img {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 6.5px;
+  bottom: 0;
+  left: 8px;
+  right: 0;
+  height: 30%;
+  width: 93.5%;
+  opacity: 0;
+  background-color: rgba(8, 11, 18, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay a i {
+  font-size: 4em;
+}
+.image:hover .overlay {
+  opacity: 1;
+}
+.overlay_2 {
+  height: 45%;
+}
+.overlay_3 {
+  height: 75%;
+}
+.overlay_4 {
+  border-radius: 50%;
+  height: 73.2%;
+}
+.overlay_5 {
+  height: 58%;
+}
 /* Fine sezione corpo pagina */
 
 
@@ -264,17 +381,25 @@ footer {
 .songtext {
   padding-right: 50px;
 }
-.songsymbols, .songtext h4:last-child {
+.songsymbols a, .songtext h4:last-child {
   color: grey;
 }
-.ms_heart {
-  padding-right: 10px;
+.songsymbols a:hover {
+  color: white;
 }
-    /* Fine sezione primo contenitore footer */
+.ms_heart {
+  padding-right: 13px;
+}
+.ms_heart, .ms_folder {
+  font-size: 1.3em;
+}
+
+
 .player {
   float: left;
   min-width: 50%;
   justify-content: center;
+  align-self: center;
 }
 .playcommands {
   color: white;
@@ -285,6 +410,12 @@ footer {
   max-width: 200px;
   margin: 0 auto;
   align-items: center;
+}
+.commands a {
+  color: white;
+}
+.commands .bighover:hover {
+  font-size: 3em;
 }
 .ms_play {
   font-size: 30px;
@@ -325,7 +456,43 @@ footer {
   height: 13.5px;
   border-radius: 50%;
 }
+
+
 .sound {
-  min-width: 25%;
+  width: 25%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.icons_right_foot i {
+  padding: 0 8px;
+  color: grey;
+  font-size: 1.3em;
+}
+.icons_right_foot a i:hover {
+  color: white;
+}
+.volume_barcontainer {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.volume_barcontainer i {
+  padding: 0 10px;
+}
+
+.volume_bar {
+  width: 20%;
+  background-color: #1db954;
+  height: 4px;
+  display: inline-flex;
+}
+.secondvolume_bar {
+  width: 10%;
+  background-color: white;
+  height: 4px;
+  display: inline-flex;
 }
 /* Fine sezione del footer */
