@@ -171,7 +171,8 @@ body {
 
 /* Inizio sezione corpo pagina */
 .main_body {
-  padding-left: 260px;
+  padding-left: 270px;
+  padding-right: 20px;
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -182,15 +183,40 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 30px;
 }
-.body_nav ul li {
+.list_nav ul li {
   list-style-type: none;
   display: inline-flex;
-  padding: 10px 10px;
+  flex-direction: column;
+  padding: 5px 10px;
 }
-
-
-
+.list_nav ul li:first-child::after {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 3px;
+}
+.list_nav ul li:first-child::after {
+  content: "";
+  width: 40%;
+  height: 3px;
+  background-color: #1db954;
+}
+.music h1 {
+  color: white;
+  font-size: 2em;
+}
+.image {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 20%;
+  min-width: 10%;
+  margin-right: 10px;
+}
+.image img {
+  min-width: 200px;
+}
 
 
 /* Fine sezione corpo pagina */
