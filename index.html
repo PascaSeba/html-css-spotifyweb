@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="css/master.css">
     <title>Spotify</title>
   </head>
@@ -78,22 +78,27 @@
             </ul>
           </div>
 
-          <div class="music">
+          <div class="music_wrapper">
             <h1>Recently played</h1>
-            <div class="metal image">
-              <img src="img/metal_lifting.jpg" alt="">
-            </div>
-            <div class="stranger image">
-              <img src="img/stranger.jpeg" alt="">
-            </div>
-            <div class="quiet image">
-              <img src="img/aquietplace.jpeg" alt="">
-            </div>
-            <div class="cure image">
-              <img src="img/cure.jpeg" alt="">
-            </div>
-            <div class="sinister image">
-              <img src="img/sinister.jpg" alt="">
+            <div class="row">
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 image">
+                <img src="img/metal_lifting.jpg" alt="">
+              </div>
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 stranger image">
+                <img src="img/stranger.jpeg" alt="">
+              </div>
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 quiet image">
+                <img src="img/aquietplace.jpeg" alt="">
+              </div>
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 cure image">
+                <img src="img/cure.jpeg" alt="">
+              </div>
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 sinister image">
+                <img src="img/sinister.jpeg" alt="">
+              </div>
+              <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 image">
+                <img src="img/split.jpeg" alt="">
+              </div>
             </div>
           </div>
 
@@ -127,6 +132,11 @@
                 <i class="fas fa-step-forward"></i>
                 <i class="fas fa-redo"></i>
               </ul>
+            </div>
+            <div class="musicbar">
+              <span>1:33</span>
+              <div class="bar"></div><a href=""><div class="pointer"></div></a><div class="bar_white"></div>
+              <span>2:07</span>
             </div>
           </div>
 

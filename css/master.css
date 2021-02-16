@@ -203,19 +203,19 @@ body {
   height: 3px;
   background-color: #1db954;
 }
-.music h1 {
+.music_wrapper h1 {
   color: white;
   font-size: 2em;
 }
+.music_wrapper {
+  width: 100%;
+}
 .image {
-  display: inline-flex;
-  flex-wrap: wrap;
-  width: 20%;
   min-width: 10%;
-  margin-right: 10px;
+  padding: 8px 8px;
 }
 .image img {
-  min-width: 200px;
+  width: 100%;
 }
 
 
@@ -237,10 +237,12 @@ footer {
   width: 100%;
   height: 100%;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 .song {
   display: flex;
-  min-width: 25%;
+  width: 300px;
   align-items: center;
   height: 100%;
   color: white;
@@ -272,6 +274,7 @@ footer {
 .player {
   float: left;
   min-width: 50%;
+  justify-content: center;
 }
 .playcommands {
   color: white;
@@ -286,7 +289,42 @@ footer {
 .ms_play {
   font-size: 30px;
 }
-
+.musicbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+.musicbar span {
+  color: white;
+  padding-right: 10px;
+  font-size: 0.9em;
+}
+.musicbar span:last-child {
+  padding-right: 0;
+  padding-left: 10px;
+  display: flex;
+}
+.bar {
+  width: 20%;
+  background-color: #1db954;
+  height: 3px;
+  display: inline-flex;
+}
+.bar_white {
+  width: 40%;
+  background-color: white;
+  height: 3px;
+  display: inline-flex;
+}
+.pointer {
+  background-color: white;
+  width: 13.5px;
+  height: 13.5px;
+  border-radius: 50%;
+}
 .sound {
   min-width: 25%;
 }
