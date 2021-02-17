@@ -16,6 +16,24 @@ body {
   clear: both;
 }
 
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .main_nav {
+    width: 80px !important;
+  }
+  .logocontainer {
+    width: 125px !important;
+  }
+  .main_body {
+    padding-left: 100px !important;
+  }
+}
+
+
+
+/* Fine Media Query */
+
+
 
 /* Sezione contenitori */
 .ms_wrapper {
@@ -23,6 +41,7 @@ body {
   height: 100vh;
   background-color: #141922;
   position: relative;
+  min-width: 500px;
 }
 /* Fine sezione contenitori */
 
@@ -32,7 +51,7 @@ body {
 .main_nav {
   position: fixed;
   left: 0;
-  width: 250px;
+  width: 200px;
   height: calc(100% - 90px);
   background-color: #000000;
   padding: 20px;
@@ -44,13 +63,12 @@ body {
 .nav_top {
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 350px;
   overflow: hidden;
 }
 .logocontainer {
-  width: 60%;
+  width: 80%;
   padding-bottom: 10px;
-  margin: 0 auto;
   display: flex;
   align-items: flex-start;
 }
@@ -109,12 +127,23 @@ body {
   font-size: 1.7em;
   font-weight: 900;
 }
+.plus {
+  font-size: 1.8em;
+  background-color: lightgray;
+  padding: 0px 2px;
+  padding-left: 8px;
+  margin-right: 8px;
+  border-radius: 5px;
+}
+.leftmain_padd:hover .plus {
+  color: black;
+}
 .playlist_menu {
   color: grey;
 }
 .play_list {
-  height: 170px;
-  overflow-y: scroll;
+  height: 100%;
+  overflow-y: auto;
 }
 .play_list::-webkit-scrollbar {
   width: 12px;
@@ -190,7 +219,7 @@ body {
 /* Sezione nav superiore */
 .main_content {
   background-color: rgba(8, 11, 18, 0.6);
-  width: calc(100% - 250px);
+  width: calc(100% - 200px);
   position: fixed;
   right: 0;
   height: 70px;
@@ -214,6 +243,8 @@ body {
 }
 .ms_button:hover {
   background-color: #24494a;
+  padding: 25px 25px;
+  font-size: 1.1em;
 }
 .ms_button:active {
   color: black;
@@ -223,8 +254,8 @@ body {
 
 /* Inizio sezione corpo pagina */
 .main_body {
-  padding-left: 280px;
-  padding-right: 30px;
+  padding-left: 220px;
+  padding-right: 25px;
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -258,7 +289,7 @@ body {
 .greenbar::after {
   content: "";
   width: 40%;
-  height: 3px;
+  height: 2.3px;
   background-color: #1db954;
 }
 
@@ -270,71 +301,74 @@ body {
   width: 100%;
 }
 .image {
-  min-width: 10%;
+  min-width: 100%;
   padding: 8px 8px;
   color: white;
+  position: relative;
 }
 .image img {
   width: 100%;
 }
-.image h3, .create h3, .populars h3 {
+.overtext h3 {
   font-size: 1.5em;
   font-weight: 900;
+  color: white;
 }
-.image p, .create p, .populars p {
+.overtext p {
   font-size: 1.2em;
   color: grey;
 }
-
+.overtext {
+  text-align: center;
+}
 
 .create, .populars {
   width: 100%;
   color: white;
   padding-top: 20px;
 }
-.create .image, .populars .image {
-  width: 200px;
-}
 
+.image_create, .populars .image {
+  min-width: 10%;
+  float: left;
+  margin: 0 10px;
+  position: relative;
+}
+.create .image_create img, .populars .image_create img {
+  min-width: 80%;
+}
 
 .populars img {
   border-radius: 50%;
 }
-.image img {
-  position: relative;
-}
+
+
 .overlay {
   position: absolute;
-  top: 6.5px;
+  top: 0;
   bottom: 0;
-  left: 8px;
+  left: 0;
   right: 0;
-  height: 30%;
-  width: 93.5%;
+  height: 100%;
+  width: 100%;
   opacity: 0;
   background-color: rgba(8, 11, 18, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.overlay_2 {
+  height: 86%;
+}
 .overlay a i {
   font-size: 4em;
+  color: white;
 }
-.image:hover .overlay {
+.image:hover .overlay, .image_create:hover .overlay {
   opacity: 1;
 }
-.overlay_2 {
-  height: 45%;
-}
-.overlay_3 {
-  height: 75%;
-}
-.overlay_4 {
+.overlay_circle {
   border-radius: 50%;
-  height: 73.2%;
-}
-.overlay_5 {
-  height: 58%;
 }
 /* Fine sezione corpo pagina */
 
@@ -356,6 +390,7 @@ footer {
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .song {
   display: flex;
@@ -438,25 +473,36 @@ footer {
   padding-left: 10px;
   display: flex;
 }
-.bar {
+.musicbar a {
   width: 20%;
   background-color: #1db954;
-  height: 3px;
+  height: 4px;
   display: inline-flex;
+  position: relative;
 }
 .bar_white {
   width: 40%;
   background-color: white;
-  height: 3px;
+  height: 4px;
   display: inline-flex;
 }
 .pointer {
+  position: absolute;
   background-color: white;
   width: 13.5px;
   height: 13.5px;
   border-radius: 50%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
 }
-
+.musicbar a:hover {
+  background-color: yellowgreen;
+}
+.musicbar a:hover .pointer {
+  visibility: visible;
+}
 
 .sound {
   width: 25%;
@@ -488,11 +534,21 @@ footer {
   background-color: #1db954;
   height: 4px;
   display: inline-flex;
+  position: relative;
 }
 .secondvolume_bar {
   width: 10%;
   background-color: white;
   height: 4px;
   display: inline-flex;
+}
+.volume_bar .pointer {
+  right: 0;
+}
+.volume_bar:hover {
+  background-color: yellowgreen;
+}
+.volume_bar:hover .pointer {
+  visibility: visible;
 }
 /* Fine sezione del footer */
