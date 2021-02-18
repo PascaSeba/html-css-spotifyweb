@@ -63,7 +63,7 @@ body {
 .nav_top {
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  min-height: 307px;
   overflow: hidden;
 }
 .logocontainer {
@@ -131,7 +131,7 @@ body {
   font-size: 1.8em;
   background-color: lightgray;
   padding: 0px 2px;
-  padding-left: 8px;
+  padding-left: 9px;
   margin-right: 8px;
   border-radius: 5px;
 }
@@ -143,19 +143,23 @@ body {
 }
 .play_list {
   height: 100%;
-  overflow-y: auto;
+  overflow: hidden;
 }
-.play_list::-webkit-scrollbar {
+.play_list ul {
+  overflow-y: auto;
+  height: calc(100vh - 491px);
+}
+.play_list ul::-webkit-scrollbar {
   width: 12px;
   background-color: #0d4142;
   border-radius: 15px;
 }
-.play_list::-webkit-scrollbar-thumb {
+.play_list ul::-webkit-scrollbar-thumb {
   background-color: black;
   border-radius: 20px;
   border: 1.5px solid #76a3a2;
 }
-.play_list::-webkit-scrollbar-thumb:active, .play_list::-webkit-scrollbar-thumb:hover {
+.play_list ul::-webkit-scrollbar-thumb:active, .play_list::-webkit-scrollbar-thumb:hover {
   background-color: #141922;
 }
 .playlist_menu .play_list ul a li {
